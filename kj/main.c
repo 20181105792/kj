@@ -1,15 +1,33 @@
-//
-//  main.c
-//  kj
-//
-//  Created by L20181105792 on 2019/10/22.
-//  Copyright © 2019 L20181105792. All rights reserved.
-//
-
 #include <stdio.h>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return 0;
+#include "stdlib.h"
+#include "string.h"
+struct NODE
+{
+    char name[20];
+    int age;
+    struct NODE *next;
+};
+int main()
+{
+    struct NODE *head,*p,*q;
+    q=head =(struct NODE *)malloc(32);
+    strcpy(head->name,"Zhang");
+    head-> age =19;
+    p=(struct NODE *)malloc(32);
+    strcpy(p->name,"Li");
+    p->age=20;
+    p->next=0;
+    q->next =p;
+    q=p;
+    p=(struct NODE*)malloc(32);
+    strcpy(p->name,"Li");
+    p->age=20;
+    p->next=p;
+    q=p;
+    p=head;
+    
+    while(p)
+    {
+        printf("name:%s age:%d\n",p->name,p->age);
+    }
 }
